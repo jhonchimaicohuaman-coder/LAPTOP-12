@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Bancario - Gestión de Clientes y Asistencias</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <header class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="landmark" class="text-emerald-400 w-8 h-8"></i>
+                <span class="text-xl font-bold tracking-wider">FINANZA_CORE</span>
+            </div>
+            <nav class="flex space-x-1">
+                <button onclick="switchTab('clientes')" id="btn-tab-clientes" class="px-4 py-2 rounded-lg text-sm font-medium bg-slate-800 text-emerald-400 flex items-center gap-2 transition">
+                    <i data-lucide="users" class="w-4 h-4"></i> Clientes/Productos
+                </button>
+                <button onclick="switchTab('asistencias')" id="btn-tab-asistencias" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-400 hover:text-white flex items-center gap-2 transition">
+                    <i data-lucide="qr-code" class="w-4 h-4"></i> Control QR y Calendario
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        
+        <section id="tab-clientes" class="space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-4 rounded-xl shadow-xs gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-900">
